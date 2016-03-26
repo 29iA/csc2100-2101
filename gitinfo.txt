@@ -1,0 +1,75 @@
+Git Guide
+
+1. git init
+- Initialize a hidden folder where all info and branch is in.
+
+2. git add
+- Staging a change, therefore adding a file in so that it is ready to commit.
+* "git ." - Add all file for staging
+
+3. git status
+- Telling if a file is tracked or untracked.
+- If a file is modified, then when using git status again, the file is not yet staged.
+
+4. git commit
+- Going to a VIM-like interface where you can commit changes.
+* I - Insert: Write a text, escape to go back to command.
+* :wq - Commit the changes with the comment.
+
+5. git commit <arg> '<comment>'
+* -m: Commit straight without using the VIM interface.
+* -a: Skip staging, any files that is tracked will commit, and vice versa.
+
+6. .gitignore file
+- Used to exclude any file name.extension that you don't want to use
+EX: *.log
+
+7. git branch <name>
+- Create a branch separate from master branch
+
+8. git checkout <branchname>
+- Going back to another branch specified
+- Save any changes you made in that branch
+
+8.a. git stash
+> Use after git add <file>
+- Store the file away until you want to come back and commit the change
+
+8.b. git stash apply
+- Apply the changes you stashed earlier
+
+9. git merge <branchname>
+- Merge the specified branch into the current branch you're currently in.
+
+For merging conflicts
+
+1. Manually fix conflicts
+<<<<<<<< HEAD
+text
+********
+- Version in the current branch
+
+text
+>>>>>>>> <branchmerged>
+- Version in the source branch (branch that is selected to merge)
+
+2. Using git mergetool
+- Download a mergetool and configure it to use
+
+For remote repositories
+1. git remote 
+- List all remote repositories you have stored
+* -v - Show the address all repositories
+* add - Add another repository
+
+2. git clone <address>
+- Copy everything in the current repositories, including past commits
+
+3. git fetch <remote>
+- Pull data into the local repository but it won't merge, so you need to merge manually.
+
+4. git pull <remote>
+- Pull data into the local repository AND merge the changes from the remote branch into the current branch.
+
+5. git push <remote> <branch>
+- Push the data from your local repository to the remote repository.
