@@ -1,8 +1,8 @@
 /*
-	TITLE:	jellybean.cpp
-	AUTHOR:
-	DATE:
-	PURPOSE:
+	TITLE:		jellybean.cpp
+	AUTHOR:		Cong Tuan Nguyen
+	DATE:		3/29/16
+	PURPOSE:	
 */
 // #include "jellybean.h"		// This is for jellybean.h
 #include <iostream>

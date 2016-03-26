@@ -1,0 +1,9 @@
+CSC 2100 - PROGRAM2 Notes
+
+rand() = pseudo-random integral number in range of 0 to RAND_MAX
+RAND_MAX = user defined
+
+Operation: (rand() % n) + x;
+- n = RAND_MAX
+- x = Initial value
+EX: rand() % 100 + 1 		// Ranges from 1 to 100.

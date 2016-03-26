@@ -1,0 +1,77 @@
+CSC 2100: Chapter 6
+
+- Argument passed to reference parameter must be variable, cannot be an expression or constant.
+
+Overloading functions - same name but different parameter lists
+- Can be used to create functions that perform the same task but take different parameter types or different number of parameters.
+- Compiler determines which version of function to call by argument and parameter list.
+
+EX:
+> void test(int);			// 1
+> void test(int, int);		// 2
+> void test(int, double);	// 3
+
+Compiler uses
+> int one, two;
+> double three;
+> test(one);
+> test(one, two);
+> test(three);
+
+Exit() Function
+- Must use <cstdlib> preprocessor directive.
+- Terminates execution of program in any functions (main and local)
+- Can be called from any function
+- Can pass an int value to operating system to indicate status of program termination
+  - Always used for abnormal termination of program
+cstdlib defines 2 constants that are commonly passed
+exit(EXIT_SUCCESS);
+exit(EXIT_FAILURE);
+
+ARRAYS MY BOY!
+
+Arrays - variable that holds multiple variable instead of one.
+- Values stored in adjacent memory locations
+- Declared using [] operator
+
+EX: int tests[5]
+- Allocates elements:
+	-	-	-	-	-
+	1	2	3	4	5
+- int = data type
+- tests = name
+- [5] = size declarator
+
+Size of an array is - total number of bytes allocated for it
+MATH: (num of elements)*(num of bytes for each element)
+
+Size declarators - named constants
+EX:
+> const int SIZE = 5;
+> int tests[SIZE];
+- Good for maintenance in case array size needs change.
+
+Accessing Array Elemeent
+Subscript - element assigned value
+- Start at 0
+EX:
+	-	-	-	-	-
+E	1	2	3	4	5
+SC	0	1	2	3	4
+MATH: SC = E-1
+
+Assigning Values to Array
+EX: 
+> int tests[5];
+> tests[0] = 79;						// Assign num 79 to array element 1, subscript 0
+> cout tests[0];						// Outputs 79
+> cin >> tests[1];						// Can also allow input
+> tests[3] = tests[1] + tests[2];		// Can also do calculation
+
+IF WE DO cout << tests; it prints out the memory address of the first element of the array.
+
+- We can access it via constant or literal subscript, or integer expression as subscript.
+
+IF you want to start with first element, must do 0, or else it fails.
+
+For loop is very useful in order to pass on many arrays without a whole buncha codes.

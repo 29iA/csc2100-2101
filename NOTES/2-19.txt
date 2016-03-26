@@ -1,0 +1,37 @@
+CSC 2100: Chapter 5
+
+Loop - control structure that cause statements to repeat
+While Loop
+EX: while (expression) {statement;}
+- Iteration - loop for (times)
+- While loop is a pretest loop, where expression is evaluated before statement is execute.
+
+While loop with Input Validation
+- While loop can be used to reject invalid data and route back to loop.
+EX:
+> cin >> number;
+> while (number >=10 ) {
+> 	cout << "Invalid entry!";
+> 	cin >> number;
+> }
+
+Counter - variable that is incremented or decremented each time loop repeats
+ - Can be used to control execution of loop
+ - Must be initialized
+
+do-while loop - posttest loop; execute loop, then test the expression.
+EX:
+> do
+> 	statement;
+> while (expression);
+
+for loop - pretest counter-controlled loop where we know how many time the counter iterates
+EX:
+> for (initialization; test expression; update)
+> 	statement;
+1) Perform initialization (count = 1)
+2) Test expression (count <=5)
+3) Do statement
+4) Update (count++)
+5) Test expression again
+and Repeat 2 - 4 until test expression is false

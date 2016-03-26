@@ -1,0 +1,49 @@
+LAB6
+
+1. Programming statement rewrite
+	a. for loop
+	
+	int x;
+	for (x = 1; x < 5; x++) {
+		cout << "Two times " << x << " is " << (2 * x) << ".\n";
+	}
+	
+	b. do-while loop
+	
+	int x = 1;
+	do
+	{
+		cout << "Two times " << x << " is " << (2 * x) << ".\n";
+		x++;
+	} while (x < 5);
+	
+2. For loop is a 
+	a. pre-test loop
+3. While loop is 
+	a. pre-test loop
+4. Do-while loop is 
+	b. post-test loop
+5. A good use for the "do-while" loop is 
+	a. To run program multiple times until user wants to quit.
+6. Good use for the "for" loop is
+	c. When you know the number of iterations of the loop (count-controlled loop)
+7. Good use for the "for" loop is
+	c. When you know the number of iterations of the loop (count-controlled loop)
+
+8. Program will display
+	a. 5
+9. Program will display
+	b. 6
+10. Program will display
+	a. It is true!
+11. Program will display
+	b. It is false!
+
+12. Write a program segment that will ask the user for a number between 1 and 10. Using a while loop, validate that the user entered a valid number and force the user to enter a valid number if they did not.
+
+	int x;
+	cin >> x;
+	while (x <= 0 || x > 10) {
+		cout << "Invalid number, please enter a number between 1 and 10.\n";
+		cin >> x;
+	}

@@ -1,0 +1,48 @@
+CSC 2100: Chapter 6-7
+
+- Prototype and the definition must indicate data type of return value (void = not returning)
+- Calling function should use return value:
+  - assign to variable
+  - send to cout
+  - use in calculation
+
+Returning Boolean Value
+- function returns True or False
+- declare return type in function prototype and heading as bool
+- function body must contain return statement that returns true or false
+
+Local and Global Variable
+- local = variable defined inside a function, so its scope only goes as far as the function's body it resides in
+  - When the function where the local var. ends, the variable end its lifetime.
+- global = variable defined outside all functions in program
+- DO NOT USE global variables for its difficulty in debugging.
+  - Use only in case of constant var.
+
+- Define global constant before function prototype
+
+- Local variables aren't automatically initialized, must be initialized by programmer.
+- Constant must be initialized.
+- Global variables (not constant) are automaticaly initialized to 0 or null when defined.
+
+Static Local Variables
+EX: static <datatype> <var>;
+- Won't die inside local function
+- When the function goes live again, everything BUT the static statement will be reset. 
+- Not accessible in main function due to it being local, not global variable.
+
+Default Arguments - argument that is passed automatically to parameter if argument is missing on function call
+- Must be constant declared in prototype
+- Can be declared in header if no prototype
+- Can multi-defined
+
+Using Reference Variables as Parameters
+- Mechanism that allows function to work with original argument from the function call, not a copy of argument
+- Allows function sent to modify values stored in the calling environment
+- Provides a way for function to return more than one value
+Reference variable - alias for another variable
+- Defined with ampersand (&)
+EX: void test (int&, int&)
+- ONLY in function prototype and function definition
+- NOT in function call statement
+
+LAYOUT: value defined --> function call statement (value) --> function with reference variable --> memory allocation to value.

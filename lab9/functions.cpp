@@ -1,8 +1,8 @@
 /*
 	TITLE:		functions.cpp
-	AUTHOR:
-	DATE:
-	PURPOSE:
+	AUTHOR:		Cong Tuan Nguyen
+	DATE:		3/29/2016
+	PURPOSE:	
 */
 
 void stuff()

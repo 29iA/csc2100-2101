@@ -1,0 +1,49 @@
+CSC 2101: Chapter 4
+
+If Statement
+- Place statement; on a separate line after (expression).
+- Careful when testing floats and doubles for equality.
+- 0 is false, any number is true (0-inf)
+- Need {curly} in order to execute more than one code.
+  - They're called a block of coode.
+
+If/Else Statement
+- Provides two possible paths of execution.
+- Perform one if true, other if false.
+EX:
+if (expression)
+	statement1;
+else
+	statement2;
+
+Nested If Statement
+- An if statement INSIDE an if statement (yo dawg)
+EX:
+if (expression)
+	if (expression 2)
+		statement2
+
+If/Else If Statement
+- Tests conditions until one is found to be true
+EX:
+if (expression)
+	statement;
+else if (expression)
+	statement;
+else if (expression)
+	statement;
+
+Flags
+- Variables that signals a condition
+- Usually used as bool var
+- Can also be an integer
+  - 0 = false
+  - Any nonzero = true
+
+Logical Operators
+- Used to create relational expressions from other expressions
+List:
+  - && = And
+  - || = Or
+  - ! = Not
+  

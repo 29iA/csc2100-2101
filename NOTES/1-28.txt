@@ -1,0 +1,86 @@
+CSC 2100: Chapter 2+3
+
+- Variables - storage location in computer's memory
+- Literals - constant values that are assigned to variables
+EX: int Variable = Literal (int number = 1) (pg. 40)
+- Identifiers - name for variables, name a variable close to what it means
+	- Cannot be key words
+	- Cannot start with a number, but can start with underscore
+	- Case-sensitive 
+	- Restricted to A-Z, 0-9
+	- Letters lowercased and capitalize after
+	
+- Numbering System
+	- Base-10 (decimal): 0-9
+	- Base-2 (binary): 0-1
+	- Base-8 (octal): 0-7 (Unix, Linux, Permission)
+	- Base-16 (hexadecimal): 0-9, A-F
+- 1-byte = 255 in decimal
+- Data Type
+	(unsigned = no negative)
+	(short = shorten for space)
+	- abort int
+		- Size: 2-bytes
+		- Range: -32,768 to +32,768
+	- unsigned abort int
+		- Size: 2-bytes
+		- Range: 0 to 65,535
+	- int
+		- Size: 4-bytes
+		- Range: -2,147,483,648 to +2,147,483,647
+	- unsigned int
+		- Size: 4-bytes
+		- Range: 0 to 4,294,967,295
+	- long int = int
+	- long long int = wayy bigger than int
+	
+- Variables of different types must be in different definitions
+EX: Same line
+	int length, width;
+	unsigned int area;
+EX: Different line
+	int length;
+	int width;
+	unsigned int area;
+
+- "char" Data Type
+	- Hold small integer
+	- 1-bytes usually
+	- uses single quotes
+	- You can put number representation or the actual letter, i.e. A or 65
+
+- "string" Data Type
+	- A series of characters in conssecutive memory locations
+	- Stored with the null terminator '\0' at the end, i.e. "Hello" = H E L L O \0
+
+- ASCII Character = pg 1212
+
+ADDITIONAL NOTES ON:
+Chapter 1.6
+- "double" Key Word
+	- Double-precision floating-point numbers ("float" keyword)
+Chapter 2.1
+- #include <iostream>
+	- Preprocessor Directive where the preprocessor picks out a set of contents from another file (like choosing a bucket of different type of legos where this one is square blocks)
+	- Always at the start of program
+- using namespace std;
+	- This gives the go flag for the program to acccess the content of the iostream, like a key to a lock.
+- int main() { program here }
+	- Main function
+	
+Chapter 2.2
+- "<<" Operator
+	- Stream insert operator
+	- Put the content from its right into its stream object in the left
+	- Stream object works with streams of data
+- "endl"
+	- Stream manipulator END LINE, where it will proceed to another line.
+EX: cout << "Singer" << endl;
+	cout << "Madame" << endl;
+-- Console
+	Singer
+	Madame
+- Escape sequence
+	- Can also be utilized
+	- Start with "\" backslash
+	- Must be inside of the string in order to work, i.e. "String\nHere\n", not "String" << \n

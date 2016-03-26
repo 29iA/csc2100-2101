@@ -1,0 +1,22 @@
+CSC 2101: Formatting output with stream manipulators
+
+setpecision()
+{
+	cout.setprecision(#);
+	cout << setprecision(4);				// Set precision before AND after
+	cout << num << endl;
+}
+
+setprecision()
+{
+	cout << setprecision(3) << fixed;		// where fixed = Fixed Notation so it ignores before decimal	
+}
+
+setw(#)										// set width basically
+{
+	cout << setw(12) << "DOG" << endl;
+	cout << setw(12) << "HORSE" << endl;
+}
+OUTPUT: ____________DOG (12 dashes of space)
+		__________HORSE (10 dashes of space)
+	- Both accompanies each other spacially

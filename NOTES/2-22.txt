@@ -1,0 +1,71 @@
+CSC 2100: Chapter 5
+
+Loop Modification
+- You can have multiple statement in initialization expression.
+  - You can have multiple update statement as well
+EX:
+> int x, y;
+> for (x=1, y=1; x <= 5; x++) {
+> 	cout << x << " plus " << y << " equals " << (x+y) << endl;
+> }
+- You can also omit initialization the expression if it's already done.
+EX:
+> int sum = 0, num = 1;
+> for (; num <= 10; num++)		// DON'T FORGET THE SEMICOLON.
+> 	sum += num;
+
+Running Total - accumulated sum of numbers from each repetition of loop
+Accumulator - variable that holds running total
+- RULES
+1. Initialize sum to 0
+EX:
+> int sum = 0, num = 1;			// Sum = accumulator
+> while (num <= 10) {
+> 	sum += num;
+> 	num++;
+> }
+
+Sentinel - value in a list of values that indicates end of data
+ - Special value that cannot be confused with valid value. EX: -999 in test score 1-100.
+ - Used to terminate input when user are unable to know what they inputted.
+ 
+5-9 is for review on which loops to use.
+
+Nested Loop - loop inside of a loop
+- inner = inside, outer = outside loop
+
+Using files for data storage
+- Use files instead of keyboard, monitor screen for program input, output.
+- Allows data to stay between runs
+
+What is needed
+- fstream Pre-processor Directive
+- File stream types:
+1. ifstream for input from a file
+2. ofstream for output
+3. fstream for input or output
+- Defining the stream object
+> ifstream infile;
+> ofstream outfile;
+
+EX:
+> ofstream outputFile;				// Initialization
+> outputFile.open("test.text");		// Open or create the file if file don't exist
+> outputFile << "Word";				// Write message in there
+> outputFile.close();				// Save file and close
+
+- outputFile variable can be anything (example, topaz, etc.)
+
+EX:
+> inputFile.open("test.txt");
+> inputFile >> name;			
+> cout << name << endl;
+
+Testing for File Open Error
+EX:
+> infile.open("test.txt");
+> if (!infile)
+> 	cout << "File open failure."
+
+Read from a file using While Loop
+- Stream extraction operator >> = true when value was successfully read false otherwise.

@@ -1,0 +1,57 @@
+CSC 2100: Chapter 9
+
+Pointer as function parameter
+- Pointer can be a parameter
+- Works like reference variable (&) to allow change to argument from within function
+
+Requires
+1) asterik * on parameter in prototype and heading
+EX: void getNum(int *ptr);
+2) asterik * in body to dereference pointer
+EX: cin >> *ptr;
+3) Address as argument in function
+EX: getNum(&num);
+
+Pointers to Constant
+EX: void displayPayRates(const double *rates)
+where *rates = payRates
+
+Constant pointers - pointer that is initialized with an addess and can't be pointed to anything else
+EX:
+> int value = 2;
+> int * const ptr = &value;
+
+Constant pointers to constants
+- Pointer that points to a constant
+- Pointer that cannot point to anything except what it is pointing to
+EX:
+> const int value = 2;
+> const int * const ptr = &value;
+
+Dynamic Memory Allocation
+- Allocate storage for a variable while program is running
+- Computer returns address of newly allocated variable
+- Uses new operator to allocate memory:
+EX:
+> double *dptr;
+> dptr = new double;		// New acts as location to stick to the pointer
+- *new returns address of memory location
+- Useful for adding new to array
+EX:
+> arrayPtr = new double[SIZE];
+- Then it can use [] or pointer arithmetic to access array
+EX:
+> for (i=0;i<SIZE;i++)
+> *arrayptr[i] = i*i;
+
+Releasing Dynamic Memory
+- Use delete to free dynamic memory
+> delete fptr;
+- Use [] to free dynamic array
+> delete [] arrayptr;
+- ONLY use delete with dynamic memory
+
+Pointer Notation
+EX:
+> void func(*int arr, int);
+> cin >> *(arr+1);

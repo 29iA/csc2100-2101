@@ -1,0 +1,34 @@
+CSC 2100: Chapter 4-5
+
+Blocks and Scope
+- Scope of a variable is the block in which it is defined from the point of definition to the end of the block.
+  - Defined at beginning of function except for some cases.
+  - Can define function later if it's not used anywhere before it is defined.
+  - Can define same variable if it's in a different block.
+  - WARNING: CONFUSING AF
+EX: 
+int main () {
+	variable				// Original var
+	if () {variable}		// Original var is now overshadowed in this block
+	variable				// After block exit, then Original var is returned
+
+Increment & Decrement Operators
+- ++ (increment operator) adds 1 to variable
+EX: val++; == val = val + 1;
+- Can be used before (prefix) or after (postfix) a variable: ++val;  ==  val++;
+- Vice versa with -- (decrement operator) subtract 1 to variable, just replace ++ with -- and you got val - 1.
+
+Prefix vs. Postfix
+- In prefix mode (++val, --val) the operator do incre or decre, then returns value
+- In postfix mode (val++, val--) operator returns value, then incre or decre
+EX: 
+> int val = 12;
+> cout << val++;		// Display 12, +1, val == 13
+> cout << ++val;		// +1, val == 14, display 14
+
+Used in expression:
+> result = num1++ + --num2;
+- --num2 is first statement
+- num1 + num2 second
+- result assigned third
+- num1 increment

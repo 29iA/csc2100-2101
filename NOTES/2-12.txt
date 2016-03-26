@@ -1,0 +1,41 @@
+CSC 2100: Chapter 4
+
+Logical Operators
+- ! > && > ||
+- If the value of a expression can be determined by evaluating just the sub-expression, then theres no need to do the other sub-expression.
+EX: <or> statement
+
+Checking numeric ranges with logical operators
+- Test iff a value falls inside a range
+EX: if (grade >= 0 && grade <= 100)
+- If not, then differ innput.
+- Input Validation - inspecting input data to determine whether it is acceptible
+- Bad input => bad output
+ASCII-Specific Values Comparison
+- Lowercased-characters have higher ASCII codes than uppercase (a > Z)
+> ch = cin.get();		// Grab a single character
+
+Menus
+- Menudriven program - program execution controlled by user selecting from list of actions
+- Menu - list choices on screen
+- Can use if/else statement
+
+String comparison
+- Can also be done
+EX: "Mary" > "Mark" // True
+
+Switch statement - alternative use of if/else
+EX: 
+> switch (expression)	// expression = integer
+> {
+> 	case expression1: statement;
+>   case exp2: statement;
+> }
+- No curly braces so using "break;" in order to exit out of the case.
+EX:
+switch (choice) {
+	case 'A': cout << "Hello!"
+			  break;
+    etc...;
+}
+- For the last case, it will automatically end.

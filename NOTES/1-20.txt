@@ -1,0 +1,10 @@
+CSC 2100: Chapter 1
+
+- Clearing temp. memory would usually work if trouble occurs.
+- Memory is volatile
+- A section of a memory is a byte
+  - 1 byte = 8 bits = 1 character or letter
+- Writing codes
+  - Source Code: .cpp
+  - Object Code: .obj
+  - Executable Code: .exe (windows executable)

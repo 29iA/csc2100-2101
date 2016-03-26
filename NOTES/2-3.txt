@@ -1,0 +1,62 @@
+CSC 2100: Chapter 2+3
+
+Named Constant: does not change my niggaaaaa!
+EX: const float PI = 3.14159
+ - You can define the const function before the int main() function because it is a global function.
+ - ALWAYS use global if a program is constant.
+ - ALWAYS name the const variable as all-caps.
+
+CIN Object output
+ - Standard input object
+ - Requires iostream file and is like cout
+ - Uses >> instead of << for cout
+ - When pressing ENTER, it automatically sent the input before it and creates a new line.
+ - cin converts data to match its data type.
+ - Complement with cout for information before input.
+ - Can also be used to input more than one value
+   - cin >> height >> width
+     - Requires a space (height_width) where _ = space
+
+Mathematical Expressions
+ - An expression can be literal (#), variable (PI), or mathematical combination of constants and variables
+ - Can be used in assignment, cout like
+EX: cout << 2 * (l+w)
+Order of Operations
+1. Unary negation (left to right)
+2. [*, /, %] (left to right)
+3. [+, -] (left to right)
+ - Parentheses first
+ - There is no exponentiation operator so we use MATH FUNCTIONS, in this case:
+   - pow(s, x) where x = Integer and s = Numerator; (s^x)
+   - REQUIRES <cmath> preprocessor directive
+
+Type Conversion
+ - Operations performed between operands of same type
+ - If not, then C++ convert one to be the type of the other
+ - This may alter the result of calculation
+Data Type Hierarchy
+1. long double
+2. double
+3. float
+4. unsigned long
+5. long
+6. unsigned int
+7. int
+RULES OF Type Conversion
+1. Type Coercion - automatic conversion of operand to another data type (long << int)
+ - short datatype is automatically promoted to int
+2. Promotion - see if there's a higher data type, it converts to the higher data type
+ - EX: int x, float y, x*y, operation becomes float
+3. Demotion - if the variable is assigned as lower data type, then it converts to lower data type
+ - EX: z = x*y where operands are float, a = z where a is int, z is automatically demoted
+
+Overflow / Underflow
+ - Occurs when value assigned too large or too small at the data type.
+ 
+Type Casting
+ - Manual data type conversion
+ - Useful for floating point division using ints: double m;
+EX: m = static_cast<double>(y2-y1) / (x2-x1)
+EX: char ch = 'C';
+	cout << ch << " is " << static_cast<int>(ch)
+ - CHANGES Data Type only for 1 line

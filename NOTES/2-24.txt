@@ -1,0 +1,65 @@
+CSC 2100: Chapter 5
+
+c_str in older version of C++
+- string object have member function c_str
+  - returns content formatted as null-terminated c-string
+EX: stringObject.c_str()
+- Converts the string file into character string.
+
+Breaking a loop
+- Can use break to terminate execution of loop.
+EX: break;
+
+Continue statement
+- Use continue to go to end of loop and prepare for next  repetition
+EX: continue;
+- while, do-while loop: Go to test, repeat test if correct.
+
+Both should be used sparingly.
+
+Modular Programming - breaking program up into smaller manageable function or modules
+Function - collection of statements to perform a task
+- Simplify process of writing programs and improve maintainability.
+
+Defining and Calling Functions
+- Function call - statement causes a function to execute.
+- Function definition - statements that makes it up.
+
+EX: 
+1> int main ()
+2> 	return 0;
+
+- int = return type
+- main = function name
+- () = function parameter list
+- return 0 = return statement
+- #1 & #2 as a whole = function definition
+- #1 = function header
+- #2 = function body
+
+Function Return Type
+- If a function does not return a value (unlike int main), then its return type is "void"
+EX:
+> void printHeading() []
+
+Calling a function
+- To call function, use function name followed by () and ;  This is called Function Call Statement
+EX:
+> printHeading();
+- Executes body of the user-defined statement.
+
+- main can call any number of functions
+- Functions can call other functions
+- Compiler must know: {} before being called.
+  - name
+  - return type
+  - number of parameter
+  - data type of each parameter
+
+Function Prototypes - ways to notify compiler abuot function before a call to the function
+EX: void FunctionName();
+- Use the prototype before int main()
+- void function returns nothing
+
+Void function itself
+EX: void functionName {}

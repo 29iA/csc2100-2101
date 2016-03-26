@@ -1,0 +1,33 @@
+CSC 2100: Chapter 2
+
+cout stands for Console OUTput
+ - classified as stream pobject - works with streams of data
+ - used to display info to the screen
+ - must use #include <iostream>
+ - must use << - stream insertion operator
+Ex: cout << "HELLO!";  //prints a HELLO! string to the screen
+
+endl stands for EndLine
+ - causes the output to go to the next line
+
+/n stands for NewLine (escape sequence)
+ - when / is used, it is an escape sequence
+
+Escape Sequences
+ - \a - alert - causes computer to beep
+ - \b - backspace - backup one space
+ - \r - return - (home key pressed) goes to beginning of line
+ - \\ - backslash - prints one backslash to tthe screen
+ - '' - single quotes - store char value 
+ - "" - double quotes - store string value
+
+EX SCRIPTS
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "whatsup?";
+	cout << endl;
+	cout << "/n";
+	cout << "text/nstuff/nother/n"
+}

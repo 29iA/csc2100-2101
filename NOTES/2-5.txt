@@ -1,0 +1,94 @@
+CSC 2100: Chapter 3+4
+
+Type Casting
+EX: perMonth = books/months
+	- books & months variables = int;
+ - In order to convert the values, we use static_cast<data_type>(var) on the variable like this: perMonth = static_cast<double>(books)/months
+ - (int)var is C-Style casting
+ - int(ch) is Pre-standard C++
+ - static_cast is preferred in the newer versions of C++
+
+Multiple Assignment
+ - Assign two or more var values to the same value
+EX: x = y = z = 5;
+EX: sum = sum + 1;		// Incremental values
+
+Combined Assignment
+ - Shortcut to assignment
+EX: sum = sum + 1		// can be shorten it to
+	sum += 1
+TABLE:
+ +=		sum = x + #
+ -=		diff = x - #
+ *=		prod = x * #
+ /=		quot = x / #
+ %=		mod = x % #
+
+Formatting Output
+ - Can conrol how output displays for numeric, string data:
+   - size, position, and number of digits
+ - requires preprocessor directive "iomanip"
+
+Stream Manipulators (iomanip)
+setw()
+ - Controls how many spaces the value is going to be displayed
+ - Also accounts for the value, so if setw(6), and var = 360, then it display like this: _ _ _ 3 6 0
+fixed - decimal notation for floating-point values
+setprecision(): used with fixed, print floating-point value using x digits after decimal. Without fixed, rint floating-point value using x significant digits
+EX: cout << setprecision(2) << fixed; 			// If used on first lane
+showpoint - used as last resort
+left - causes eventual output to be left aligned
+right - vice versa
+EX: cout << left	or		cout << right
+scientific - display scientific notation on number
+
+Working with Characters and String Objects
+ - Using cin >> to input strings causes problem because it skips over whitespace characters (space, tab, line break)
+ - Using getline() function works
+ - getline(readLocation,var)
+   - readLocation signifies anything like cin or actual file (learned later)
+EX: cin >> name
+	getline(cin,name)
+
+Keyboard Buffer
+1. getline (cin,name);
+BUFFER: name\n
+B --> Input --> Clean BUFFER
+2. cin >> name
+BUFFER: name\n
+B --> Input --> ignore \n --> Dirty BUFFER
+
+ - cin.ignore() would use it from regular cin >> function to getline()
+
+ - Reading a single character (Press any keys to continue...)
+   - Use cin.get();
+     - char ch;
+	 - cin.get (ch);
+   - Problem: Read next character entered, even whitespace
+   - Use cin >> ch;
+   - Problem: skip whitespace
+
+Chapter 4:
+
+Mathematical Operators: cmath Preprocessor Directive (Section 3.9) for table
+ - abs
+ - cos
+ - exp
+ - fmod
+ - log
+ - log10
+ - sin
+ - sqrt
+ - tan
+Relational Operators
+ - > Greater than
+ - < Less than
+ - >= Greater or equal to
+ - <= Less or equal to
+ - == Equal to
+ - != Not equal to
+Assign Operations
+ - result = x <= y;		// 0 for false, 1 for true
+If Statement - conditionally execute or skipped over
+EX: if (choice == true) {cout << "FUCK";}
+ - if (expression) {staatement}

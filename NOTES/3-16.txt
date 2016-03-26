@@ -1,0 +1,32 @@
+CSC 2100: Chapter 9
+
+Getting address of a variable
+- Each variable in program is stored at unique address
+- Address operator '&' is used to get address to a variable
+EX:
+> int num = -99;
+> cout << &num;		// Print address in hexadecimal
+
+Pointer variable (pointer) - A variable that holds an address (like a shortcut on desktop)
+- It is basically like an array name or a reference pointer
+- Pointers aare more "low-level" than array and reference
+DEFINITION:
+> int *intptr;
+- Read as intptr can hold the address of an int
+- Spacing does not matter
+> int * intptr;
+> int* intptr;
+
+Assigning address to a pointer variable
+> int *intptr;
+> intptr = &num;		// Places address of num into int pointer
+
+Pointer initialization
+> int *ptr = NULL;		// Pointing to nothing
+- nullptr for C++ 11 and up
+
+Indirectional operator - allows you to access item the pointer is pointing to
+- Indirection operator *ptr is acted like x variable when called, that it gives the value of the variable it is pointing to
+- Whereas ptr is acted like &x, where it gives the memory adddress of the variable it's pointing at
+- Can actually assign value in place of original variable
+EX: > *ptr = 1;			// Assign 1 to variable

@@ -1,0 +1,41 @@
+CSC 2100: Chapter 6
+
+Sending Data into a Function
+- Can pass values into a function at time of call
+- Values passed to function are arguments
+- Variables in function that hold value passed as arguments are parameter
+EX:
+> void displayValue(int num) {
+>	cout << num;
+>}
+Integer parameter = num
+Data type parameter = int
+Argument = specific num inputted (1,2,5,8)
+
+- When a function parameter is passed, it can't be used in the main function since it's only in that function.
+
+Passing Multiple Arguments
+- When passing multiple arguments
+  - Number of argument much match data type and definition
+EX: 
+> void function(int, bool, float);
+> int val1, val2, val3;
+> function(val1, val2, val3);
+- The order of the value entered is importance, as it sends directly how you sent it (left to right)
+- Naming of the value does not matter unless its spot is not right.
+
+Pass by value - when arg. passed to function, its value is copied into parameter, not the variable itself.
+
+Return Statement - end execution of a function
+- Can be placed anywhere in function, and statements after return statement won't be executed.
+- void function without return statement, the function ends at its last }
+
+Returning value from function
+- In value-returning funcction, return statement can be used to return value from function to point of call.
+EX:
+> int sum (int num1, int num2) {
+> 	double result;
+>	result = num1+num2;
+>	return result;
+> }
+- OR just do return (num1+num2) for the same effect as the original example.
