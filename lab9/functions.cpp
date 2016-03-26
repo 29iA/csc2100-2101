@@ -4,3 +4,8 @@
 	DATE:
 	PURPOSE:
 */
+
+void stuff()
+{
+	cout << "Hello git!";
+}
