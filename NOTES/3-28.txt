@@ -1,0 +1,14 @@
+CSC 2100: Chapter 10
+
+Character Testing
+- Requires cctype header file (preprocessor directive)
+
+* isalpha: true if argument is letter, false otherwise
+* isalnum: true if letter or digit, false otherwise
+* isdigit: true if digit 0-9, false otherwise
+* islower: true if lowercase letter, false otherwise
+* isprint: true if printable character (ASCII), refer to ASCII chart in book or web
+* ispunct: true if punctuation character, false otherwise
+* isupper: true if uppercase character, false otherwise
+* isspace: true if whitespace character (space or \n), false otherwise
+
