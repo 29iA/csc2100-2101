@@ -2,8 +2,9 @@
 	TITLE:		functions.cpp
 	AUTHOR:		Cong Tuan Nguyen
 	DATE:		3/29/2016
-	PURPOSE:	
+	PURPOSE:	Introduction to multiple file (header and function) and using pointer notation
 */
+#include "netflix.h"
 
 // Dynamically allocated array creation
 int* makeArray(int size)
