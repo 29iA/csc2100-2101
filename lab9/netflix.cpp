@@ -23,8 +23,14 @@ int main()
 	
 	cout << "How many students were surveyed? ";
 	cin >> size;
+	cout << endl << endl;
 	
 	makeArray(size);
+	getStudentData(array, size);
+	getAverage(array, size);
+	// selectionSort(array, size);
+	printArray(array, size);
+	getMedian(array, size);
 }
 
 /*
@@ -46,7 +52,16 @@ int* makeArray(int size)
 // Input data into array
 int getStudentData(int *array, int size)
 {
+	cout << "Enter the number of hours each student spent watching Netflix.\n";
 	
+	for (int n=1;n<=size;n++) {
+		cout << "Student " << size << ": ";
+		cin >> *(array+(n-1));
+	}
+	
+	for (int n=1;n<=size;n++) {
+		cout << *(array+(n-1)) << endl;
+	}
 }
 
 // Calculate and display average of inputs
