@@ -8,7 +8,85 @@ Character Testing
 * isdigit: true if digit 0-9, false otherwise
 * islower: true if lowercase letter, false otherwise
 * isprint: true if printable character (ASCII), refer to ASCII chart in book or web
-* ispunct: true if punctuation character, false otherwise
+* ispunct: true if punctuation character other than digit, letter, or space, false otherwise
 * isupper: true if uppercase character, false otherwise
 * isspace: true if whitespace character (space or \n), false otherwise
 
+- cin.get(<var>) can be used in place of cin >> ?
+
+Character Case Conversion
+- Requires cctype
+* toupper: if char argument is lowercase letter, return uppercase equivalence, otherwise unchanged
+EX:
+> char c = 'a';
+> cout << toupper(c);		// Prints 'A'
+
+* tolower: vice versa of toupper
+EX:
+> char c = 'A';
+> cout << tolower(c);		// Prints 'a'
+
+C-string (character array)
+- Introduced in chapter 10 due to its different ruleset
+- Sequence of characters stored in adjacent memory locations and terminated by NULL character
+String literal (string constant): sequence of characters encased in double quote.
+
+Array definition
+> char city[SIZE];
+- Leave room for null at the end.
+- So if a character takes up 19 spaces, make array 20 so it leaves a null terminator
+
+- Can enter a value using cin or >>
+- Input is whitespace-terminated
+- No check to see if enough space
+
+- for input containing whitespace and to control amount of input use
+> cin.getline();
+- More specifically...a
+> cin.getline(line, SIZE);
+EX:
+> const int SIZE = 5;
+> char carray[SIZE];
+> cin.getline(carray, SIZE);
+- Where line is array input, and SIZE is const variable 
+- c-string is the only array where you can use
+> cout << array;
+- Since it has a null terminator, so it can print all characters and not memory address
+
+C-string Functions
+- Require cstring header file (preprocessor directive)
+
+- Functions take one or more C-strings as argument. It can either take
+- C-string name
+- pointer to C-string
+- literal string
+
+strlen(str): return length of c-string str
+> char city[SIZE] = "Missoula";
+> cout << strlen(city); 	// Prints 8
+
+strcat(str1, str2): Take str2 and put it at the end of str1
+> char location[SIZE] = "Missoula, ";
+> char state[3] = "MT";
+> strcat(location, state);
+// Location now has "Missoula, MT"
+- THINK CAREFULLY WHEN DOING THIS AS TO NOT LET IT GET OVER ITS BOUND
+- Making str1 size bigger is one way.
+
+strcpy(str1, str2): copies str2 to str1
+
+strstr(str1, str2): finds the furst occurence of str2 in str1. Returns pointer to match, or NULL if not
+> char river[] = "Wabash";
+> char word[] = "aba";
+> cout << strstr(river, word);
+// Display "abash"
+
+String/Numeric Conversion Function
+- Requires cstdlib header file
+/ Function			/ Parameter			/ Action
+* atoi (ASCII) 		C-string			convert C-string to an int value, returns the value
+* atol				C-string			convert C-string to a long value, returns the value
+* atof				C-string			convert C-string to a double value, returns the value
+* itoa				int, C-string, int	convert 1st int parameter to C-string, stores it in 2nd parameter, 3rd parameter is base of converted value
+EX:
+iNum = atoi("1234");
