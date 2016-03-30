@@ -1,4 +1,4 @@
-CSC 2100: Chapter 10+
+CSC 2100: Chapter 10 & 11
 
 String comparison (strcmp)
 > strcmp(n1, n2) <operator> 0
@@ -41,3 +41,11 @@ String member functions (look that up on CLASS 24 slide)
 EX:
 > string name = "Faggot";
 > name.clear();					// Clear the string (name)
+
+---
+Abstract Data Types
+- A data type that specifies
+  - Values that can be stored or operations that can be done on the values
+- User of the ADTs does not need to know how the data is stored in the data type
+
+- Abstraction: general characteristics without details
