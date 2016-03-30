@@ -1,0 +1,43 @@
+CSC 2100: Chapter 10+
+
+String comparison (strcmp)
+> strcmp(n1, n2) <operator> 0
+- It returns zero if they're exactly the same
+- <operator>: greater than or less than.
+- Compares n1 to n2 and whether it is greater than or less than, depend on <operator>
+
+String/Numeric Conversion Functions
+- If C-string contains non-digits, results are undefined
+  - Function may return up to non-digit or return 0
+ 
+- itoa does no bounds checking, making sure there is enough space to store result
+
+Writing Your Own C-String Handling Functions
+- Designing the function
+  - Pass arrays or pointers to char array
+  - Performing bound checking
+  - Anticipate unexpected user input
+
+CLASS 24 has functions example on how to do these
+
+C++ String Class
+- Primitive datatype: int, double, float, etc.
+- Non-primitive datatype: string
+
+Other definitions of C++ strings
+* string myname("Chris");
+* string yourname(myname);
+* string aname(myname, 3);		// get myname's first 3 characters
+* string verb(myname, 3, 2);	// 3 = starting place, 2 is how many characters it get
+* string noname('A', 5);		// initialize it to 5 'A' characters
+
+String operators
+* += 		// Appends string on right to end of contents on left (fuse the string on the right to the end of the string to the left)
+* +			// Fuse (concatenates) 2 strings together
+* []		// References character in string using array notation
+
+String member functions (look that up on CLASS 24 slide)
+- .dot function (where you put a period to separate)
+EX:
+> string name = "Faggot";
+> name.clear();					// Clear the string (name)
