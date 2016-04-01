@@ -1,0 +1,43 @@
+CSC 2100: Chapter 11+12 - April's Fool Edition
+
+Combining data into structure
+- structure: C++ construct that allows multiple variables to be grouped together
+> struct <structname>	// structure tag
+> {
+>   type1 field1;	// structure member 
+>   type2 field2;	// structure member
+> }
+- Type = datatype, field = variable name
+EX in CLASS 25
+- Structure name would always have an uppercase letter
+EX: struct Student {}
+- Multiple variable could be held in one data type
+
+Defining variables (structure declaration)
+- To define variables, use structure tag as type name:
+> Student bill;
+
+Accessing Structure Members
+- Use the dot (.) operator to refer to members of struct variable
+> cin >> stul.studentID;
+> getline (cin, stu1.name);
+> stu1.gpa = 1;
+
+Displaying struct variable
+> cout << bill;		// Does not work
+> cout << bill.studentID;
+
+Same with Comparison, need the dot operator.
+
+Initializing Structure
+- struct variable can be initialized when defined
+> Student s = {11465, "Joan", 2, 3.75};
+- Can also initialize member-by-member
+> s.name = "Joan";
+
+Arrays of Structures
+- Can be used in place of parallel arrays
+> Student stuList[CONST];
+- Individual accessible using subscript notation
+- Field within structures accessible using dot notation
+> cout << stuList[5].studentID;
