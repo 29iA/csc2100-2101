@@ -12,18 +12,35 @@ using namespace std;
 
 // Function Prototypes
 int showMenuGetChoice();
-string * createStringArray();
-void getInfoFromUser();
+string * createStringArray(int);
+void getInfoFromUser(string&, string&, int);
 void printStory();
 
 int main()
 {
-	int choice = 0;
-	// string *array;			// Pointer to array
+	int choice = 0, size = 0;
+	string *qArray;				// Pointer to question array
+	string *aArray;				// Pointer to answer array
 	
 	choice = showMenuGetChoice();
-	if (choice == 0)
-		cout << endl << "Bye!";
+	
+	ifstream file;				// Declare input file to read
+	switch(choice) 
+	{
+		case 1:	
+			file.open("starWars.txt");
+			break;
+		case 2:	
+			file.open("dog.txt");
+			break;
+		case 3:
+			file.open("pirate.txt");
+			break;
+		case 4: return 0;
+	}
+	file >> size;
+	qArray = createStringArray(size);
+	getInfoFromUser(qArray, aArray, size);
 	// array = createStringArray();
 }
 
@@ -34,19 +51,39 @@ int showMenuGetChoice()
 {
 	int choice = 0;
 	
-	cout << "Hi";
+	// Menu
+    cout << "Let's Play some MADLIBS!\n\nChoose a MADLIBS game:\n";
+    cout << "1. The Power of the Force (Star Wars Mad Libs)\n"
+         << "2. Dog Days (Dog Ate My Mad Libs)\n"
+         << "3. Talk Like a Pirate (Pirates Mad Libs)\n"
+         << "4. END GAME\n\n";
+    cout << "CHOOSE 1-4:  ";
+	
+	cin >> choice;
+	
+	// Input Validation
+    while ( (choice < 1) || (choice > 4) ) {
+		cout << endl << "Invalid choice you dickwad.";
+        cin >> choice;        
+    }
+	
 	return choice;
 }
 
 // Create dynamically allocated string array for later use
-string * createStringArray()
+string * createStringArray(int size)
 {
-	int *arr;
-	arr = new string[1];
+	string *arr;
+	arr = new string[size];
 	return arr;
 }
 
-void getInfoFromUser()
+void getInfoFromUser(string &qArr, string &aArr, int size)
+{
+	
+}
+
+void printStory()
 {
 	
 }
