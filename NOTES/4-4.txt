@@ -1,0 +1,32 @@
+CSC 2100: Chapter 11
+
+Nested Structure
+- A structure can contain another structure as member
+> struct PersonInfo
+> {	string name, 
+>		   address, 
+>		   city;
+> }
+> struct Student
+> {	int studentID;
+>			PersonInfo pData;
+> }
+
+- Use the dot operator to refer to refer to fields of nested structure
+> Student s;
+> s.pData.name = "Some";
+> s.pData.city = "body";
+
+Structures as function arguments
+- May pass members of struct variables to functions:
+> computeGPA(stu.gpa);
+- May pass entire struct variables to funct:
+> showData(stu);
+- Can use reference parameter if function needs to modify content of structure variable
+
+Returning a Structure from a Function
+- Function can return a struct:
+> Student getStudentData();		// Prototype
+> stu1 = getStudentData();		// call
+EX: Program 11.7 Class 26 ppt
+

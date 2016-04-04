@@ -1,4 +1,4 @@
-CSC 2100: Chapter 11+12 - April's Fool Edition
+CSC 2100: Chapter 11 - April's Fool Edition
 
 Combining data into structure
 - structure: C++ construct that allows multiple variables to be grouped together
