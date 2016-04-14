@@ -1,0 +1,41 @@
+CSC 2100: Chapter 11
+
+Pointers to Structure
+- Structure variable has an address
+- Pointers to structure are vars that can hold address of struct
+EX: Student stu1;
+> Student *stuPtr;		// Assign a pointer for Student
+- Can use & operator to assign address
+> stuPtr = & stu1;		// Point stuPtr to the address of stu1
+- Structure pointer can be a function parameter
+
+Accessing Structure Members Via Pointer Variables
+- Must use () to dereference pointer variable, not field within structure
+> cout << (*stuPtr).studentID;
+		// Pointer(dot.operator)Member
+- Can use structure pointer operator to eliminate () and use clearer notation:
+> cout << stuPtr->studentID;
+
+Dynamic Memory Allocation with Structure
+- You can do it
+> Student * stuPtr;
+> stuPtr = new Student;
+- Can also dynamicaly allocate new struct array
+> Student * stuPtrArr;
+> stuPtrArr = new Student[SIZE];
+- This creates array of SIZE students and array name is stuPtrArr
+
+Unions
+- Similar to a struct, except
+  - All memebers share a single memory location and
+  - Only one member of union can be used at a time
+- Declared using union
+- Variables defined as struct
+
+Anonymous Union
+- Union without tag
+- Declared inside of the main function if there's no tag
+> union
+> {
+> 	int yes;
+> }

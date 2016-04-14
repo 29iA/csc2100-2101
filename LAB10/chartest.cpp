@@ -11,13 +11,28 @@ using namespace std;
 
 int main()
 {
-	char array[];
+	int digit = 0, upper = 0, lower = 0;
+	char array;
 	
 	ifstream text;
 	text.open("text.txt");
 	
-	text >> array;
-	cout << array;
-	
+	while (!text.eof()) {
+		/*
+		if (isdigit(array) == true)
+			digit++;
+		if (isalpha(array) == true) 
+		{
+			if (isupper(array) == true)
+				upper++;
+			else
+				lower++;
+		}
+		else {}
+		*/
+		cout << array;
+	}
+	text.close();
+	cout << digit << endl << upper << endl << lower;
 	return 0;
 }

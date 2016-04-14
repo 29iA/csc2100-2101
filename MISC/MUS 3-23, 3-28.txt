@@ -16,3 +16,5 @@ MUS 1030: Beethoven
 	- 4/3, 2/4
 	- Adagio, Adante, Vivace
 	
+4/4
+- Test Wednesday
