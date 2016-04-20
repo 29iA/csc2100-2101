@@ -1,0 +1,84 @@
+CSC 2100: Chapter 13
+
+Object-Oriented Programming - based on data and functions that operate on it. 
+
+Limitations of Procedural Programming
+- Programs based on complex function hierarchies are difficult to maintain and easy to break
+
+Class - like a struct but variables and functions in the class can have different properties than a struct
+Object - instance of a class, in that a variable can be instance of a struct
+
+Visualizer: Class = blueprint, object = production made using blueprint
+
+Attributes - members of a class
+
+EX:
+- In a class, you have:
+----------------------
+|      C L A S S     |
+| 1. Data Attributes |
+|    ^          ^    |
+| ---|----------|--- |
+|    v          v    |
+| 2. Member Funct    |
+----------------------
+<-> = encapsulation
+
+More on Object
+- Data hiding - restricting access to certain members of an object to outside codes (think of it as permission)
+- Public interface - members of an object that are available outside of the object, sharing some data and functions but prevent seeing the internal workings
+
+Classes Format
+> class ClassName
+> {
+> 	attributes;
+> 	member_funct;
+> };
+
+EX:
+> class Rect
+> {
+> 	private:	// Access specifier, Private members
+> 		double width;				// Attributes
+>		double length;				
+> 	public:		// Access specifier, Public members
+>		void setWidth(double);		// Member Funct *// Mutator (setter function)
+>		void setLength(double);		// Mutator
+>		double getWidth() const;	// Accessor (getter function)
+>		double getLength() const;
+> 		double getArea() const;
+> }
+
+Access Specifiers - used to control access to members of class
+- public: - can be accessed by functions outside of the class
+- private: - can only be called or accessed by functions that are members of the class
+
+- If not specified access specifier, default = private
+- You can also add access specifier at any time (private, public, public, private, etc.)
+
+- const appearing on function declaration specifies that function will not change any data in the calling object
+
+Defining member function
+- Put prototype in class declaration
+- Define function using class name and scope resolution operator (::)
+> int Rect::setWidth(double w)
+> {
+> 	width = w;
+> }
+
+Mutator: member funct that stores value in private member variable 
+Accessor: Function that retrieves value from private member variable and do not change object's data, so mark it const
+
+Defining Instance of Class
+- object = instance of class
+
+- Defined like structure variables
+> Rect r;
+
+- Access members using dot operator:
+> r.setWidth(5.2);
+> cout << getWidth();
+
+- Compiler error if attempt to access private member using dot operator
+
+Class specification file - header file for specifying 
