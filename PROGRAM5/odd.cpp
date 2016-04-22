@@ -5,8 +5,10 @@
 	PURPOSE: Practicing writing program with various applications from Chapter 11 through 12
 */
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <string>
+#include <cstdlib>
 using namespace std;
 
 // Structures
@@ -37,11 +39,11 @@ struct Item
 	Date day;					// Nested struct Date
 };
 // Constants
-const int NUM = 100;
+const int SIZE = 100;
 
 // Function Prototypes (for odd.h)
 int menu();
-void add();
+void add(int, Item*);
 float stringToFloat(string);
 void printPopular();
 void printItems();
@@ -49,18 +51,19 @@ void saveInventory();
 
 int main() 
 {
-	Item array[NUM];
+	Item i_array[SIZE];
+	int itemSize = 0;
 	int choice;
 	bool repeat;
 	
 	// Welcome message
-	cout << "WELCOME TO OBSCURA ANTIQUES & ODDITIES!\n\n";
-	choice = menu();
 	do {
+		cout << "WELCOME TO OBSCURA ANTIQUES & ODDITIES!\n\n";
+		choice = menu();
 		switch (choice) 
 		{
 			case 1: 
-				add(); 
+				add(itemSize, i_array); 
 				break;
 			case 2:
 				printPopular();
@@ -107,43 +110,78 @@ int menu()
 	
 	return c;
 }
-void add() 
+void add(int itemSize, Item * i_array[SIZE]) 
 {
-	int c;			// Choice variable
+	int c;				// Choice variable
+	string file;		// Filename
+	string file_input;	// File input
 	
-	// if (isnum())
-	// Display menu (use after else clause on if/else check for array)
-	cout << "Do you want to....\n"
+	if (itemSize >= SIZE)
+		cout << "The store warehouse is full. You cannot add anymore items!\n";
+	else
+	{
+		// Display menu (use after else clause on if/else check for array)
+		cout << "Do you want to....\n"
 		<< "1.  Add items from a file?\n"
 		<< "2.  Add one item manually?\n"
 		<< "3.  Return to main menu?\n\n"
 		<< "CHOOSE 1-3: ";
-	cin >> c;
-	
-	// Input validation
-	while ((c < 1) && (c > 3)) 
-	{
-		cout << "Invalid choice. CHOOSE 1-4:  ";
 		cin >> c;
+	
+		// Input validation
+		while ((c < 1) && (c > 3)) 
+		{
+			cout << "Invalid choice. CHOOSE 1-4:  ";
+			cin >> c;
+		}
+		
+		cout << endl << endl;
 	}
 	
-	if (choice == 1)
+	if (c == 1)
 	{
+		// Asking for the file name
+		cout << "What is the name of the file with your list of items? (ex: filename.txt)\n"
+			<< "FILENAME: ";
+		cin.ignore();
+		getline(cin, file);
+		
+		fstream inFile;
+		inFile.open(file,ios::in);
+		
+		if (!inFile.fail()) 
+		{
+			while (!inFile.eof())
+			{
+				// -> for calling, '.' for storing
+				getline(inFile, i_array[itemSize].name, '#');
+				getline(inFile, i_array[itemSize].description, '#');
+				
+				getline(inFile, i_array[itemSize].cost.goods_price, '#');
+				
+				getline(inFile, i_array[itemSize].cost.sale_price, '#');
+				
+				getline(inFile, i_array[itemSize].cost.profit, '#');
+			}
+			cout << "All creatures from " << file << " have been added to the program.\n";
+		}
+		else
+			cout << "ERROR: File non-existent.\n";
 	
-	}
-	else if (choice == 2)
+	else if (c == 2)
 	{
 		
 	}	
-	else if (choice == 3)
+	else if (c == 3)
 	{
 		
 	}
-	else if (choice == 4)
+	else if (c == 4)
 	{
 		
 	}
 	else {}
+	
 }
 
 float stringToFloat(string str)

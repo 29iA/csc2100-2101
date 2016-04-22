@@ -42,7 +42,7 @@ float stringToFloat(string);
 int main()
 {
 	Creatures c_array[SIZE];
-	int creaturesNum = 0;			// Creatures variable for upkeep of current num creatures
+	int creaturesNum;			// Creatures variable for upkeep of current num creatures
 	int choice;
 	int repeat = 1;
 	do 
@@ -92,12 +92,9 @@ void enterCreatures(int creatureNum, Creatures * creatureList)
 	int choice;
 	string file;			// Store filename (including extension)
 	string file_input;		// Store string file input from file reading
-	string temp;			// Temporary string for conversion?
 	
-	if (creatureNum >= 100) 
-	{
+	if (creatureNum >= SIZE) 
 		cout << "The zoo is at full capacity so you can no longer add anymore animals.\n";
-	}
 	else
 	{
 		// Menu
@@ -106,6 +103,13 @@ void enterCreatures(int creatureNum, Creatures * creatureList)
 			<< setw(5) << "2. Enter one creature manually.\n"
 			<< "CHOICE 1-2: ";
 		cin >> choice;
+		
+		while ((choice < 1) && (choice > 3)) 
+		{
+			cout << "Invalid choice. CHOOSE 1-4:  ";
+			cin >> c;
+		}
+
 		cout << endl << endl;
 	}
 	
@@ -125,12 +129,13 @@ void enterCreatures(int creatureNum, Creatures * creatureList)
 			while (!eFile.eof())
 			{
 				// -> for calling, '.' for storing
-				getline(eFile, creatureList.name, '#');
-				getline(eFile, creatureList.description, '#');
-				getline(eFile, creatureList.length, '#');
-				getline(eFile, creatureList.height, '#');
-				getline(eFile, creatureList.location, '#');
-				getline(eFile, creatureList.dangerous, '#');
+				getline(eFile, creatureList[creatureNum].name, '#');
+				getline(eFile, creatureList[creatureNum].description, '#');
+				
+				getline(eFile, creatureList[creatureNum].length, '#');
+				getline(eFile, creatureList[creatureNum].height, '#');
+				getline(eFile, creatureList[creatureNum].location, '#');
+				getline(eFile, creatureList[creatureNum].dangerous, '#');
 			}
 			cout << "All creatures from " << file << " have been added to the program.\n";
 		}
