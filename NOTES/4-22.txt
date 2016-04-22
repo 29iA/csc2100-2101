@@ -1,0 +1,80 @@
+CSC 2100: Chapter 13-14
+
+Avoiding stale data
+- By changing a data that other data would be dependent on, it became stale
+EX:
+> length * width = area
+- if length or width were to change and area is not updated, then it is stale
+
+Pointer to an Object
+- Can define a pointer to an object
+> Rectangle *rPtr = nullptr;
+
+Can access public members via pointer
+> rPtr = &otherRectangle;
+> rPtr->setLength(12,5);
+> cout << rPtr->getLength() << endl;
+
+Dynamically Allocating Object
+> Rect *rectPtr = null;
+> rectPtr = new Recta;
+
+Why making Private Members?
+- Making data members private provide data protection
+- Data can be accessed only through public functions
+- Public functions define the class's public interface
+
+Separating Specification from Implementation
+
+Inline Member Function
+- Member function can be defined 
+  - Inline: in-class declaration
+  - After the class declaration
+- Inline appropriate for short function bodies
+> int getWidth() const {return width;}
+
+- Store it in class's public member
+
+Constructor - member function that is automatically called when object is created
+- Purpose is to construct an object (initializing)
+- Constructor function name is same as class name
+- No return type
+EX:
+>> .h file
+> class Rect 
+> {
+> public:
+> 	Rect();
+> }
+>> .cpp file
+> Rect box;
+> // Function Definition
+> Rect::Rect() {}
+
+Default Constructor - takes no argument
+- C++ write default constructor inside class if none defined, although it is nothing
+
+Passing Argument to Constructors
+- Indicate parameters in prototype
+> Rect(double, double);			// in class file
+- Use parameter in definition
+> Rect r(w, len);				// in .cpp file
+> Rect::Rect(double w, double len) {}
+
+Destructor
+- Member function automatically called when object is destroyed
+- Destructor name is same as class name but with a '-' added
+> -classname
+- One destructor per class
+- Similar to constructor
+
+Overloading Constructors
+- Class can have more than one constructor
+- Overloading constructors in class must have different parameter lists
+> Rec();
+> Rec(double);
+> Rec(double, double);
+- etc.
+
+- DO NOT provide more than one default constructor < Rec() > and only one default deconstructor
+- 
